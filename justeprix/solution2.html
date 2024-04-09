@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function handleGamePlay() {
+  let playerName = prompt("What is your name?", "player");
+  const rightPrice = Math.ceil(Math.random() * 100);
+  console.log("rightPrice", rightPrice);
+  let playerGuess = parseInt(prompt("Choose a number between 1 and 100", 0));
+  let tryCount = 1;
+
+  while (playerGuess !== rightPrice && tryCount <= 3) {
+    if (playerGuess > rightPrice) {
+      tryCount++;
+      console.log("tries", tryCount);
+      playerGuess = prompt(
+         `It's less! Try again! Choose a number between 1 and 100, you have had ${tryCount} tries.` ,
+        0
+      );
+    }
+    if (playerGuess < rightPrice) {
+      tryCount++;
+      console.log("tries", tryCount);
+      playerGuess = prompt(
+        `It's more!  Try again! Choose a number between 1 and 100, you have had ${tryCount} tries.` ,
+        0
+      );
+    }
+    if (+playerGuess === rightPrice) alert(`Well done ${playerName} you won!`);
+  }
+  if (tryCount >= 3 && +playerGuess !== rightPrice) {
+    const hasConfirmedReplay = confirm(
+      `Sorry you lose. The right price was ${rightPrice}. Play again ?`
+    );
+    if (hasConfirmedReplay) {
+      location.reload();
+      handleGamePlay();
+    }
+  }
+}
+handleGamePlay();
+    </script>
+</body>
+</html>

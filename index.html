@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculatrice</title>
+</head>
+<body>
+    <script>
+        let firstValue = parseInt(prompt("Entrez un chiffre"));
+        let operator = prompt("Quel opération souhaitez-vous faire?");
+        let secondValue = parseInt(prompt("Entrez un deuxième chiffre"));
+
+        function calculatrice(firstValue, operator, secondValue) {
+
+        let result = 0;
+
+        if (operator === "+") {
+            result = firstValue + secondValue;
+        } else if (operator === "-") {
+            result = firstValue - secondValue;
+        } else if (operator === "*") {
+            result = firstValue * secondValue;
+        } else if (operator === "/") {
+            result = firstValue / secondValue;
+        } else {
+            result = "Opérateur non valide";
+        }
+       return console.log(result);
+    }
+
+    console.log(calculatrice(firstValue, operator, secondValue));
+        // Méthode pour additionner sans utiliser le parseInt
+        // console.log(+(firstValue) + +(secondValue));
+
+
+    </script>
+</body>
+</html>

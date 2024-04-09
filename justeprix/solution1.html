@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         let player = prompt('Quel est votre nom ?')
+        const rightPrice = Math.ceil(Math.random() * 100);
+        console.log(rightPrice)
+        let randomNumber = parseInt(prompt('Un nombre entre 1 et 100'));
+        
+        while (randomNumber !== rightPrice) {
+        if (randomNumber > rightPrice) {
+            console.log("C'est moins");
+        } else {
+            console.log("C'est plus");
+        }
+        randomNumber = parseInt(prompt('Entrez un autre nombre : '));
+}
+console.log("Bravo " + player + ", tu as gagné !");
+    </script>
+</body>
+</html>
